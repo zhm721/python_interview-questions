@@ -20,6 +20,35 @@ def stringsort(str):
     str1=str1 + str2
     #return str1+str2
     return str1
-str3=stringsort(['-','+','-','+','+','-','-'])
-print(str3)
+#str3=stringsort(['-','+','-','+','+','-','-'])
+#print(str3)
+#第二种方法
+def mysort(s):
+    l = len(s)
+    i = 0
+    for m in range(l):
+        if s[i] == '-':
+            s[i], s[l - 1] = s[l - 1], s[i]
+            l -= 1
+        else:
+            i += 1
+    return s
+#list=['-','+','-','+','+','-','-']
+#print(mysort(list))
 
+#第三种方法  用快速排序法的思想，可能会更好理解
+def arrange(data):
+    i = 0
+    j = len(data) - 1
+    while True:
+        while data[i] == "+":
+            i += 1
+        while data[j] == "-":
+            j -= 1
+        if i >= j:
+            break
+        data[i], data[j] = data[j], data[i]
+    return data
+list=['-','+','-','+','+','-','-']
+data=arrange(list)
+print(data)
