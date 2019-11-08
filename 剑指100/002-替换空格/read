@@ -3,4 +3,5 @@
 
 思路
 第一种方法：可以直接用python的replace方法：考察python的replace方法
-第二种方法：
+第二种方法：join方法
+第三种：手写
