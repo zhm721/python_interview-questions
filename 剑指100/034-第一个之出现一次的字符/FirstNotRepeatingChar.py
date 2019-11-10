@@ -20,8 +20,19 @@ def findNotRepeatingChar(str):
         if charCounter[s]==1:
             return s
     return "no such character"
-m="abbaccmdeff"
+m="anbbaccmdeff"
 #print(findNotRepeatingChar(m))
+#第二种方法:直接用遍历的方式
+def findNotRepeatingChar2(str):
+    if not str:
+        return -1
+    else:
+        for i in str:
+            if str.count(i)==1:
+                #return str.index(i)#返回第一次出现一次的字符的位置
+                return i #直接返回这个字符
+print(findNotRepeatingChar2(m))
+
 
 
 
